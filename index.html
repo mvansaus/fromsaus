@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike van Saus</title>
 
-    <!-- Link to your CSS file -->
+    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Optional: Google Fonts -->
+    <!-- Optional Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=PT+Serif&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <style>
+        /* Ensure body-wrapper is initially hidden if needed */
+        .body-wrapper {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,7 +28,7 @@
                 <td>
                     <div class="fade-in">
                         <img src="images/MvS Logo BL.png" alt="Loading...">
-                    </div>
+                    </div>                   
                 </td>
             </tr>
         </tbody>
@@ -33,36 +40,39 @@
             <div class="header-logo">
                 <img src="images/MvS Logo BL.png" alt="MvS Logo">
             </div>
-            <!-- Your menu and other header content here -->
+            <!-- Add your menu and header content here -->
         </header>
 
         <main>
-            <!-- Your page content goes here -->
             <h1>Welcome to Mike van Saus</h1>
-            <p>Your content here...</p>
+            <p>Your page content goes here...</p>
         </main>
 
         <footer class="footer">
-            <!-- Footer content here -->
             <p>&copy; 2025 Mike van Saus</p>
         </footer>
     </div>
 
-    <!-- Loader Script -->
+    <!-- Vanilla JS Loader -->
     <script>
         window.addEventListener('load', function() {
             const loader = document.querySelector('.doc-loader');
-            if (!loader) return;
+            const bodyWrapper = document.querySelector('.body-wrapper');
 
-            // Fade out the loader
-            loader.style.transition = 'opacity 0.5s ease';
-            loader.style.opacity = 0;
+            // Fade out loader
+            if (loader) {
+                loader.style.transition = 'opacity 0.5s ease';
+                loader.style.opacity = 0;
+                setTimeout(() => loader.style.display = 'none', 500);
+            }
 
-            // After fade-out, hide loader and restore scrolling
-            setTimeout(() => {
-                loader.style.display = 'none';
-                document.documentElement.style.overflow = 'auto';
-            }, 500);
+            // Fade in main content
+            if (bodyWrapper) {
+                bodyWrapper.style.opacity = 1;
+            }
+
+            // Restore scrolling
+            document.documentElement.style.overflow = 'auto';
         });
     </script>
 
