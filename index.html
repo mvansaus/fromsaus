@@ -38,12 +38,18 @@
                 </tr>        
 <script>
 window.addEventListener('load', function() {
+    // Select the loader table
     const loader = document.querySelector('.doc-loader');
-    if(loader) {
-        loader.style.transition = 'opacity 0.5s ease';
-        loader.style.opacity = 0;
-        setTimeout(() => { loader.style.display = 'none'; }, 500);
-    }
+    if (!loader) return;
+
+    // Optional: fade out smoothly
+    loader.style.transition = 'opacity 0.5s ease';
+    loader.style.opacity = 0;
+
+    // Remove the loader from view after transition
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 500);
 });
 </script>
             </tbody>
