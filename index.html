@@ -17,6 +17,9 @@
         <link rel="stylesheet" type="text/css"  href='css/prettyPhoto.css' />        
         <link rel="stylesheet" type="text/css"  href='css/sm-clean.css' />        
         <link rel="stylesheet" type="text/css"  href='style.css' />
+        <link rel="stylesheet" href="css/sm-core-css.css">
+<link rel="stylesheet" href="css/sm-clean.css">
+
 
         <!--[if lt IE 9]>
                 <script src="js/html5shiv.js"></script>                
@@ -63,45 +66,46 @@
 
 <!-- HEADER -->
 <header class="header-holder">
-    <div class="header-logo left">
-        <a href="index.html">
-            <img src="images/MvS Logo BL.png" alt="Logo" style="max-width:200px;">
-        </a>
+  <div class="header-logo left">
+    <a href="index.html">
+      <img src="images/MvS Logo BL.png" alt="Logo" style="max-width:200px; height:auto;">
+    </a>
+  </div>
+
+  <div class="header-menu right">
+    <nav id="header-main-menu" class="left">
+      <ul class="main-menu sm sm-clean">
+        <li>
+          <a href="index.html" class="has-submenu current">Home</a>
+          <ul class="sub-menu sm-nowrap">
+            <li><a href="index-image.html">All</a></li>
+            <li><a href="index-slider.html">Professional</a></li>
+            <li><a href="index-blog.html">Personal</a></li>
+            <li><a href="index-video.html">Design</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li>
+          <a href="contact.html" class="has-submenu">Contact</a>
+          <ul class="sub-menu sm-nowrap">
+            <li><a href="contact-map.html">Contact & Map</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="toggle-holder relative right">
+      <div id="toggle">
+        <i class="fa fa-search"></i>                      
+      </div>
     </div>
 
-    <div class="header-menu right">
-        <nav id="header-main-menu" class="left">
-            <ul class="main-menu sm sm-clean">
-                <li>
-                    <a href="index.html" class="has-submenu current">Home</a>
-                    <ul class="sub-menu sm-nowrap">
-                        <li><a href="index-image.html">All</a></li>
-                        <li><a href="index-slider.html">Professional</a></li>
-                        <li><a href="index-blog.html">Personal</a></li>
-                        <li><a href="index-video.html">Design</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li>
-                    <a href="contact.html" class="has-submenu">Contact</a>
-                    <ul class="sub-menu sm-nowrap">
-                        <li><a href="contact-map.html">Contact & Map</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="toggle-holder relative right">
-            <div id="toggle">
-                <i class="fa fa-search"></i>                      
-            </div>
-        </div>
-
-        <div class="clear"></div>
-    </div>
+    <div class="clear"></div>							
+  </div>
 </header>
+
 
 
             <div id="content" class="site-content">
@@ -249,13 +253,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src='js/jquery.ba-throttle-debounce.min.js'></script>                
         <script src='js/jquery.nicescroll.min.js'></script>
         <script src='js/main.js'></script>
-            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/jquery.smartmenus.min.js"></script>
 <script>
-$(function() {
+  $(function() {
     $('#header-main-menu .main-menu').smartmenus();
-});
+  });
 </script>
+
             <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
   $(window).on("load", function() {
