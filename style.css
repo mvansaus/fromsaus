@@ -1242,9 +1242,11 @@ li.left-footer-content.mobile
         padding-bottom: 85px;
     }
 
-.header-logo {
+/* Force all header logos to 200x200 */
+.header-logo,
+.header-logo * {
     float: none !important;
-    display: block !important;    
+    display: block !important;
     text-align: center !important;
     margin-bottom: 60px !important;
 }
@@ -1252,8 +1254,11 @@ li.left-footer-content.mobile
 .header-logo img {
     width: 200px !important;
     height: 200px !important;
-    object-fit: contain !important; /* keeps image from stretching */
+    max-width: 200px !important;
+    max-height: 200px !important;
+    object-fit: contain !important; /* keeps the image proportionate */
 }
+
 
     #toggle
     {
