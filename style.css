@@ -142,6 +142,9 @@ input, textarea, select
     color: #FD3137;
 }
 
+<link rel="stylesheet" href="css/sm-core-css.css">
+<link rel="stylesheet" href="css/sm-clean.css">
+
 .sub-arrow
 {
     -webkit-transition: transform 0.1s ease;
