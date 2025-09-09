@@ -1242,13 +1242,19 @@ li.left-footer-content.mobile
         padding-bottom: 85px;
     }
 
-    .header-logo
-    {
-        float: none;
-        display: block;    
-        text-align: center;
-        margin-bottom: 60px;
-    }
+.header-logo {
+    float: none;
+    display: block;    
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header-logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* keeps image from stretching */
+}
+
 
     #toggle
     {
