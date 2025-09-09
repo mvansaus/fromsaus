@@ -1,64 +1,8 @@
 /* =========================
-   BASE STYLES
-========================= */
-html {
-    overflow: hidden;
-}
-
-body {
-    background-color: #E2E0E0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 20px; 	
-    line-height: 35px;
-    font-weight: 400;	
-    color: #191919;
-    letter-spacing: -0.5px;
-}
-
-a {
-    color: #191919;
-    text-decoration: none;
-    transition: color .2s, background-color .2s, border-color .2s;
-}
-a:hover {
-    color: #FD3137;
-}
-
-input, textarea, select {
-    -webkit-appearance: none;
-}
-
-/* =========================
-   LAYOUT
-========================= */
-.body-wrapper {
-    margin: 45px;
-    background-color: #fff;
-    position: relative;
-}
-
-/* =========================
-   LOADER
-========================= */
-.doc-loader {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;	
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.doc-loader img {
-    width: 120px;
-    height: 120px;
-}
-
-/* =========================
-   HEADER
+   HEADER + MENU
 ========================= */
 .header-holder {
-    padding: 150px 0;
+    padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,67 +10,121 @@ input, textarea, select {
 }
 
 .header-logo img {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* MAIN NAVIGATION */
 #header-main-menu {
-    display: inline-block;
-    margin-right: 50px;
+    display: flex;
+    margin: 0;
+    position: relative;
+    z-index: 999;
 }
 
 .main-menu.sm-clean {
     background-color: transparent;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
 }
 
-.sm-clean a.current,
-.sm-clean a:hover,
-.sm-clean a:focus,
-.sm-clean a:active,
-.sm-clean a.highlighted,
-.sm-clean ul a:hover,
-.sm-clean ul a:focus,
-.sm-clean ul a:active,
-.sm-clean ul a.highlighted,
-.sm-clean .current_page_item a {
+.main-menu.sm-clean li {
+    position: relative;
+}
+
+.main-menu.sm-clean li a {
+    display: block;
+    padding: 10px 0;
+    color: #191919;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.main-menu.sm-clean li a:hover,
+.main-menu.sm-clean li a.current,
+.main-menu.sm-clean li a.highlighted {
     color: #FD3137;
 }
 
+/* DROPDOWN STYLING */
+.main-menu.sm-clean li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    min-width: 180px;
+    padding: 5px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.main-menu.sm-clean li:hover > ul {
+    display: block;
+}
+
+.main-menu.sm-clean li ul li a {
+    padding: 10px 20px;
+    font-weight: 400;
+    color: #191919;
+}
+
+.main-menu.sm-clean li ul li a:hover {
+    color: #FD3137;
+}
+
+/* SUB-ARROW */
 .sub-arrow {
-    transition: transform 0.1s ease; 
-    backface-visibility: hidden;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+    display: inline-block;
 }
 .main-menu a.has-submenu.highlighted .sub-arrow {
     transform: rotate(45deg);
 }
 
-/* =========================
-   SEARCH TOGGLE
-========================= */
-.toggle-holder {
-    width: 29px;
-    height: 30px;
-    position: relative;
-}
-#toggle {
-    width: 29px;
-    height: 30px;
-    display: inline-block;
-    position: absolute;
-    z-index: 2;
-}
-#toggle .fa-search {
-    font-size: 1.3em;
-    transition: color .2s, transform .2s;
-}
-#toggle.on .fa-search:before {
-    content: "\f010";
-}
-#toggle .fa-search:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    color: #FD3137;
+/* RESPONSIVE HEADER */
+@media screen and (max-width: 925px) {
+    .header-holder {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    #header-main-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none; /* hidden by default for toggle */
+    }
+
+    .main-menu.sm-clean {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-menu.sm-clean li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-menu.sm-clean li ul {
+        position: static;
+        border: none;
+        box-shadow: none;
+        display: none;
+    }
+
+    .main-menu.sm-clean li:hover > ul {
+        display: block;
+    }
+
+    .toggle-holder {
+        display: block;
+        margin-top: 15px;
+    }
 }
