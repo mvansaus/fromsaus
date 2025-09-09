@@ -1243,18 +1243,17 @@ li.left-footer-content.mobile
     }
 
 .header-logo {
-    float: none;
-    display: block;    
-    text-align: center;
-    margin-bottom: 60px;
+    float: none !important;
+    display: block !important;    
+    text-align: center !important;
+    margin-bottom: 60px !important;
 }
 
 .header-logo img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain; /* keeps image from stretching */
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: contain !important; /* keeps image from stretching */
 }
-
 
     #toggle
     {
