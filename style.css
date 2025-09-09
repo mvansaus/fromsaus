@@ -793,6 +793,24 @@ div.pp_default .pp_loaderIcon
 
 
 /* FOOTER */
+/* =========================
+   FOOTER LOGO
+========================= */
+.footer-logo,
+.footer-logo * {
+    float: none !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 40px auto !important;
+}
+
+.footer-logo img {
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    object-fit: contain !important;
+}
 
 .footer
 {
