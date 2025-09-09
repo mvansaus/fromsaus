@@ -2,11 +2,13 @@
    HEADER + MENU
 ========================= */
 .header-holder {
-    padding: 40px 0;
+    padding: 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-logo img {
